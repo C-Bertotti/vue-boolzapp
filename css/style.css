@@ -3,3 +3,49 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* typo */
+body {
+    font-family: 'Lato', sans-serif;
+}
+/* typo */
+
+/* mix */
+#root {
+    height: 100vh;
+    background: linear-gradient(to top, #DBDBD2 85%, #009688 15%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    background-color: #fff;
+    width: 75%;
+    height: 95%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header {
+    background-color: red;
+    flex-basis: 100%;
+    height: 80px;
+}
+
+aside {
+    background-color: blue;
+    width: 30%;
+    height: calc(100% - 80px);
+}
+
+main {
+    background-color: green;
+    flex-grow: 1;
+}
+
+
+
+
+
+/* /mix */
