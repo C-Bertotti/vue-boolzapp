@@ -139,7 +139,7 @@ aside .header__right {
 
 /* aside */
 aside {
-    width: 40%;
+    width: 35%;
 }
 
 .aside__bottom {
@@ -211,15 +211,28 @@ aside {
 /* / contact */
 
 main {
-    background-color: red;
-    flex-grow: 1;
+    width: 65%;
     justify-content: space-between;
 }
 
 #main__middle {
     background-image: url(../img/mine.jpg);
     flex-grow: 1;
+    overflow: auto;
+}
 
+.msg__wrapper {
+    width: calc(100% - 180px);
+    margin: auto;
+}
+.msg {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px 17px;
+}
+
+.msg.send {
+    background-color: #D5F9BA;
 }
 
 .main__bottom {
@@ -229,7 +242,7 @@ main {
 }
 
 .main__bottom button {
-    margin: 0 40px;
+    width: 90px;
     font-size: 25px;
 }
 
