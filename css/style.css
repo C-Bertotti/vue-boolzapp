@@ -13,6 +13,14 @@ h2 {
     font-weight: 400;
     font-size: 16px;
 }
+
+
+/* typo modifier */
+.txt--under {
+    text-decoration: underline;
+}
+
+/* / typo modifier */
 /* typo */
 
 /* mix */
@@ -32,6 +40,47 @@ h2 {
     flex-wrap: wrap;
 }
 
+.circle--small {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.circle--big {
+    height: 60px;
+    width: 60px;
+}
+
+input:focus,
+button:focus {
+    outline: none;
+}
+
+
+/* btn  */
+.btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+.btn--light {
+    color: #B1B1B1;
+}
+
+.btn--dark {
+    color: #6B7376; 
+}
+
+/* /btn  */
+
+/* modifier */
+
+/* modifier */
+
+
 /* header */
 header {
     background-color: #eaeaea;
@@ -42,11 +91,7 @@ header {
 }
 
 header .avatar {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
     object-fit: cover;
-    margin: 0 10px;
 }
 
 .header__left,
@@ -66,11 +111,62 @@ aside .header__right {
 }
 /* header */
 
+/* aside */
 aside {
     background-color: #fff;
-    width: 40%;
+    flex-basis: 40%;
     height: calc(100% - 70px);
 }
+
+/* notifications */
+.notifications {
+    background-color: #8EDAFC;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+.notifications i {
+    color: #8EDAFC;
+    background-color: #fff;
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
+}
+/* / notifications */
+
+/* searchbar */
+.searchbar__wrp {
+    background-color: #F3EEEA;
+    padding: 7px;
+    display: flex;
+}
+
+.searchbar__wrp > * {
+    border: 1px solid #e9ebeb;
+    background-color: #fff;
+}
+
+#searchbutton {
+    padding: 10px 30px;
+}
+
+#searchbar {
+    flex-grow: 1;
+    padding: 10px;
+}
+
+
+
+
+/* /searchbar */
+
+
+/* contact  */
+
+/* / contact */
+
+
 
 main {
     background-image: url(../img/mine.jpg);
