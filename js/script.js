@@ -83,14 +83,24 @@ var app = new Vue (
                     ],
                 },
             ],
-            activeContact: 0
+            activeContact: 0,
+            newMessageText: ''
         },
         methods: {
             activeChat: function(item, index) {
                 this.activeContact = index;
+            },
+            sendMessage: function() {
+                var newMessage = {
+                    date: 'now',
+                    message: this.newMessageText,
+                    status: 'sent'
+                }
+                if ( this.newMessageText !== '' ) {
+                    this.contacts[this.activeContact].messages.push(newMessage);
+                    this.newMessageText = '';
+                }
             }
-
-
         }
     }
 );

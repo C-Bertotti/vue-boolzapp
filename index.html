@@ -93,7 +93,7 @@
                 </div>
                 <div class="navbar main__bottom">
                     <button class="btn btn--dark"><i class="far fa-smile"></i></button>
-                    <input type="text" id="message" placeholder="Scrivi un messaggio">
+                    <input type="text" id="message" placeholder="Scrivi un messaggio" v-model="newMessageText" @keyup.13="sendMessage">
                     <button class="btn btn--dark"><i class="fas fa-microphone"></i></button>
                 </div>
             </main>
