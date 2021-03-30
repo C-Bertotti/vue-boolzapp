@@ -62,8 +62,8 @@
                     </div>
                     <div class="contact__wrapper">
                         <ul>
-                            <li v-for="item in contacts" @click="activeChat(item)" class="contact">
-                                <img class="circle--big" :src="'img/avatar'+ item.avatar +'.jpg'" alt="">
+                            <li v-for="(item, index) in contacts" class="contact" @click="activeContact = index" :class=" activeContact == index ? 'active' : '' ">
+                                <img class="circle--big" :src="'img/avatar' + item.avatar + '.jpg'" alt="">
                                 <h3>{{ item.name }}</h3>
                             </li>
                         </ul>
