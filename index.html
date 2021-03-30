@@ -85,9 +85,9 @@
                 </header>
                 <div id="main__middle">
                     <div class="msg__wrapper">
-                        <div v-for="message in contacts[activeContact]" class="msg" >
-                            <p class="msg__txt">{{ message }}</p>
-                            <p class="msg__date">10/01/2020 15:30:55</p>
+                        <div v-for="item in contacts[activeContact].messages" class="msg" :class="item.status == 'sent' ? 'sent' : 'received'">
+                            <p class="msg__txt">{{ item.message }}</p>
+                            <p class="msg__date">{{ item.date }}</p>
                         </div>  
                     </div>
                 </div>
