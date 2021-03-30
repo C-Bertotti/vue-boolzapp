@@ -90,7 +90,17 @@ var app = new Vue (
             activeChat: function(item, index) {
                 this.activeContact = index;
             },
-            sendMessage: function() {
+
+            receivedMessage:function () {
+                var newMessage = {
+                    date: 'now',
+                    message: 'ok',
+                    status: 'received'
+                }
+                this.contacts[this.activeContact].messages.push(newMessage);
+            },
+
+            sendMessage: function(e) {
                 var newMessage = {
                     date: 'now',
                     message: this.newMessageText,
@@ -100,6 +110,7 @@ var app = new Vue (
                     this.contacts[this.activeContact].messages.push(newMessage);
                     this.newMessageText = '';
                 }
+                setTimeout(e, 1000);
             }
         }
     }
