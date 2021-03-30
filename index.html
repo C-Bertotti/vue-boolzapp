@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boolzapp</title>
     <!-- google font  -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preceivedonnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- / google font  -->
 
@@ -17,9 +17,15 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- / style -->
 
+    <!-- day.js -->
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script>dayjs().format()</script>
+    <!-- day.js -->
+
     <!-- vue js  -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <!-- / vue js  -->
+
 
     <!-- favicon -->
 
@@ -56,31 +62,15 @@
                     </div>
                     <div class="contact__wrapper">
                         <ul>
-                            <li class="contact">
-                                <img class="circle--big" src="img/avatar_1.jpg" alt="">
-                                <h3>Michele</h3>
+                            <li v-for="item in contacts" @click="activeChat(item)" class="contact">
+                                <img class="circle--big" :src="'img/avatar'+ item.avatar +'.jpg'" alt="">
+                                <h3>{{ item.name }}</h3>
                             </li>
-                            <li class="contact">
-                                <img class="circle--big" src="img/avatar_1.jpg" alt="">
-                                <h3>Michele</h3>
-                            </li>
-                            <li class="contact">
-                                <img class="circle--big" src="img/avatar_1.jpg" alt="">
-                                <h3>Michele</h3>
-                            </li>
-                            <!-- <li class="contact">
-                                <img class="circle--big" src="img/avatar_1.jpg" alt="">
-                                <h3>Michele</h3>
-                            </li>                            <li class="contact">
-                                <img class="circle--big" src="img/avatar_1.jpg" alt="">
-                                <h3>Michele</h3>
-                            </li> -->
                         </ul>
                     </div>
-                    
                 </div>
-
             </aside>
+            
             <main>
                 <header class="navbar">
                     <div class="header__left">
@@ -95,23 +85,40 @@
                 </header>
                 <div id="main__middle">
                     <div class="msg__wrapper">
-                        <div class="msg send">
-                            <p class="msg__txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, est mollitia magnam eveniet esse aliquid ullam molestiae exercitationem repellendus nulla provident beatae fugiat harum, eum nobis consequatur voluptatem enim assumenda!</p>
-                            <p>Oggi, 12:10</p>
+                        <div class="msg sent">
+                            <p class="msg__txt">Hai portato a spasso il chhhhane?</p>
+                            <p class="msg__date">10/01/2020 15:30:55</p>
                         </div>
-                        <div class="msg send">
+                        <div class="msg received">
                             <p class="msg__txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, est mollitia magnam eveniet esse aliquid ullam molestiae exercitationem repellendus nulla provident beatae fugiat harum, eum nobis consequatur voluptatem enim assumenda!</p>
-                            <p>Oggi, 12:10</p>
-                        </div>
-                        <div class="msg rec">
-                            <p class="msg__txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, est mollitia magnam eveniet esse aliquid ullam molestiae exercitationem repellendus nulla provident beatae fugiat harum, eum nobis consequatur voluptatem enim assumenda!</p>
-                            <p>Oggi, 12:10</p>
+                            <p class="msg__date">10/01/2020 15:30:55</p>
                         </div>    
-
+                        <div class="msg sent">
+                            <p class="msg__txt">Hai portato a spasso il chhhhane?</p>
+                            <p class="msg__date">10/01/2020 15:30:55</p>
+                        </div>
+                        <div class="msg received">
+                            <p class="msg__txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, est mollitia magnam eveniet esse aliquid ullam molestiae exercitationem repellendus nulla provident beatae fugiat harum, eum nobis consequatur voluptatem enim assumenda!</p>
+                            <p class="msg__date">10/01/2020 15:30:55</p>
+                        </div> 
+                        <div class="msg sent">
+                            <p class="msg__txt">Hai portato a spasso il chhhhane?</p>
+                            <p class="msg__date">10/01/2020 15:30:55</p>
+                        </div>
+                        <div class="msg received">
+                            <p class="msg__txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, est mollitia magnam eveniet esse aliquid ullam molestiae exercitationem repellendus nulla provident beatae fugiat harum, eum nobis consequatur voluptatem enim assumenda!</p>
+                            <p class="msg__date">10/01/2020 15:30:55</p>
+                        </div> 
+                        <div class="msg sent">
+                            <p class="msg__txt">Hai portato a spasso il chhhhane?</p>
+                            <p class="msg__date">10/01/2020 15:30:55</p>
+                        </div>
+                        <div class="msg received">
+                            <p class="msg__txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, est mollitia magnam eveniet esse aliquid ullam molestiae exercitationem repellendus nulla provident beatae fugiat harum, eum nobis consequatur voluptatem enim assumenda!</p>
+                            <p class="msg__date">10/01/2020 15:30:55</p>
+                        </div> 
                     </div>
-
                 </div>
-
                 <div class="navbar main__bottom">
                     <button class="btn btn--dark"><i class="far fa-smile"></i></button>
                     <input type="text" id="message" placeholder="Scrivi un messaggio">
@@ -119,8 +126,6 @@
                 </div>
             </main>
         </div>
-
-
     </div>
 
     <!-- script -->

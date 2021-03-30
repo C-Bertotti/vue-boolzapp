@@ -87,7 +87,6 @@ ul {
     cursor: pointer;
 }
 
-
 .btn--light {
     color: #B1B1B1;
 }
@@ -95,7 +94,6 @@ ul {
 .btn--dark {
     color: #6B7376; 
 }
-
 /* /btn  */
 
 /* input */
@@ -105,14 +103,10 @@ input {
     border-radius: 5px;
     padding: 10px;
 }
-
 /* / input */
 
+/* /mix */
 
-
-/* modifier */
-
-/* modifier */
 
 
 /* header */
@@ -210,11 +204,13 @@ aside {
 }
 /* / contact */
 
+/* main */
 main {
     width: 65%;
     justify-content: space-between;
 }
 
+/* main middle */
 #main__middle {
     background-image: url(../img/mine.jpg);
     flex-grow: 1;
@@ -224,17 +220,44 @@ main {
 .msg__wrapper {
     width: calc(100% - 180px);
     margin: auto;
+    display: flex;
+    flex-direction: column;
 }
+
 .msg {
-    background-color: white;
     border-radius: 15px;
-    padding: 20px 17px;
+    min-width: 300px;
+    max-width: 70%;
+    padding: 5px 10px;
+    margin-bottom: 15px;
 }
-
-.msg.send {
+.msg.sent {
     background-color: #D5F9BA;
+    align-self: flex-end;
+}
+.msg.received {
+    background-color: white;
 }
 
+
+.msg:first-of-type {
+    margin-top: 50px;
+}
+
+.msg__txt {
+    margin: 15px 17px 10px;
+    font-size: 14px;
+}
+
+.msg__date {
+    text-align: right;
+    font-size: 12px;
+    color: #B1B1B1;
+}
+
+/* main middle */
+
+/* main bottom  */
 .main__bottom {
  background-color: #F3EEEA;
  display: flex;
@@ -245,9 +268,5 @@ main {
     width: 90px;
     font-size: 25px;
 }
-
-
-
-
-
-/* /mix */
+/* main bottom  */
+/* main */
