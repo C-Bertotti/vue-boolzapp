@@ -8,9 +8,9 @@ var app = new Vue (
                     avatar: '_1',
                     messages: [
                         {
-                        date: '10/01/2020 15:30:55',
-                        message: 'Hai portato a spasso il cane?',
-                        status: 'sent'
+                            date: '10/01/2020 15:30:55',
+                            message: 'Hai portato a spasso il cane?',
+                            status: 'sent'
                         },
                         {
                             date: '10/01/2020 15:50:00',
@@ -84,13 +84,14 @@ var app = new Vue (
                 },
             ],
             activeContact: 0
+        },
+        methods: {
+            activeChat: function(item, index) {
+                this.activeContact = index;
+            }
+
+
         }
-        
-        // methods: {
-        // //     activeChat: function(item) {
-        // //         item.active = 'active';
-        // //     }
-        // }
     }
 );
 

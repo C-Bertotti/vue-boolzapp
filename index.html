@@ -62,7 +62,7 @@
                     </div>
                     <div class="contact__wrapper">
                         <ul>
-                            <li v-for="(item, index) in contacts" class="contact" @click="activeContact = index" :class=" activeContact == index ? 'active' : '' ">
+                            <li v-for="(item, index) in contacts" class="contact" @click="activeChat(item, index)" :class=" activeContact == index ? 'active' : '' ">
                                 <img class="circle--big" :src="'img/avatar' + item.avatar + '.jpg'" alt="">
                                 <h3>{{ item.name }}</h3>
                             </li>
@@ -74,8 +74,8 @@
             <main>
                 <header class="navbar">
                     <div class="header__left">
-                        <img src="img/avatar_io.jpg" alt="my avatar" class="avatar circle--small">
-                        <h2>Caterina Bertotti</h2>
+                        <img :src="'img/avatar' + contacts[activeContact].avatar + '.jpg'" alt="my avatar" class="avatar circle--small">
+                        <h2> {{ contacts[activeContact].name }} </h2>
                     </div>
                     <div class="header__right">
                         <button class="btn btn--light"><i class="fas fa-circle-notch"></i></button>
@@ -85,38 +85,10 @@
                 </header>
                 <div id="main__middle">
                     <div class="msg__wrapper">
-                        <div class="msg sent">
-                            <p class="msg__txt">Hai portato a spasso il chhhhane?</p>
+                        <div v-for="message in contacts[activeContact]" class="msg" >
+                            <p class="msg__txt">{{ message }}</p>
                             <p class="msg__date">10/01/2020 15:30:55</p>
-                        </div>
-                        <div class="msg received">
-                            <p class="msg__txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, est mollitia magnam eveniet esse aliquid ullam molestiae exercitationem repellendus nulla provident beatae fugiat harum, eum nobis consequatur voluptatem enim assumenda!</p>
-                            <p class="msg__date">10/01/2020 15:30:55</p>
-                        </div>    
-                        <div class="msg sent">
-                            <p class="msg__txt">Hai portato a spasso il chhhhane?</p>
-                            <p class="msg__date">10/01/2020 15:30:55</p>
-                        </div>
-                        <div class="msg received">
-                            <p class="msg__txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, est mollitia magnam eveniet esse aliquid ullam molestiae exercitationem repellendus nulla provident beatae fugiat harum, eum nobis consequatur voluptatem enim assumenda!</p>
-                            <p class="msg__date">10/01/2020 15:30:55</p>
-                        </div> 
-                        <div class="msg sent">
-                            <p class="msg__txt">Hai portato a spasso il chhhhane?</p>
-                            <p class="msg__date">10/01/2020 15:30:55</p>
-                        </div>
-                        <div class="msg received">
-                            <p class="msg__txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, est mollitia magnam eveniet esse aliquid ullam molestiae exercitationem repellendus nulla provident beatae fugiat harum, eum nobis consequatur voluptatem enim assumenda!</p>
-                            <p class="msg__date">10/01/2020 15:30:55</p>
-                        </div> 
-                        <div class="msg sent">
-                            <p class="msg__txt">Hai portato a spasso il chhhhane?</p>
-                            <p class="msg__date">10/01/2020 15:30:55</p>
-                        </div>
-                        <div class="msg received">
-                            <p class="msg__txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, est mollitia magnam eveniet esse aliquid ullam molestiae exercitationem repellendus nulla provident beatae fugiat harum, eum nobis consequatur voluptatem enim assumenda!</p>
-                            <p class="msg__date">10/01/2020 15:30:55</p>
-                        </div> 
+                        </div>  
                     </div>
                 </div>
                 <div class="navbar main__bottom">
