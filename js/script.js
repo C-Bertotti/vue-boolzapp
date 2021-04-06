@@ -84,23 +84,15 @@ var app = new Vue (
                 },
             ],
             activeContact: 0,
-            newMessageText: ''
+            newMessageText: '',
+            contactSearched: ''
         },
         methods: {
-            activeChat: function(item, index) {
+            activeChat: function(index) {
                 this.activeContact = index;
             },
 
-            receivedMessage:function () {
-                var newMessage = {
-                    date: 'now',
-                    message: 'ok',
-                    status: 'received'
-                }
-                this.contacts[this.activeContact].messages.push(newMessage);
-            },
-
-            sendMessage: function(e) {
+            sendMessage: function() {
                 var newMessage = {
                     date: 'now',
                     message: this.newMessageText,
@@ -110,7 +102,21 @@ var app = new Vue (
                     this.contacts[this.activeContact].messages.push(newMessage);
                     this.newMessageText = '';
                 }
-                setTimeout(e, 1000);
+
+                setTimeout(() => {
+                    var newMessage = {
+                        date: 'now',
+                        message: 'ok',
+                        status: 'received'
+                    }
+                    this.contacts[this.activeContact].messages.push(newMessage);
+                }, 1000);
+            },
+
+            searchContact: function(item) {
+                if ( (item.name).includes(this.contactSearched) ) {
+                    return true;
+                }
             }
         }
     }
