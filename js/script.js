@@ -111,10 +111,16 @@ var app = new Vue (
                     }
                     this.contacts[this.activeContact].messages.push(newMessage);
                 }, 1000);
+
+                var element = document.getElementById('main__middle');
+                element.scrollTop = element.scrollHeight;
+                
+               
+
             },
 
             searchContact: function(item) {
-                if ( (item.name).includes(this.contactSearched) ) {
+                if ( (item.name.toLowerCase()).includes(this.contactSearched.toLowerCase()) ) {
                     return true;
                 }
             }
